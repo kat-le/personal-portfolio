@@ -11,20 +11,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 12px calc(var(--pad) * -1) 0;
-  padding: 16px var(--pad);
+  margin: 2px calc(var(--pad) * -1) 0;
+  padding: 26px var(--pad) 6px;
   font-size: 10px;
-  background: var(--accent);
-  color: #fff;
+  position: relative; isolation: isolate;
+  color: var(--ink);
+}
+/* hero grid continued upward, fading out toward the navbar */
+.subnav::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(#a8a8a8 1px, transparent 1px),
+    linear-gradient(90deg, #a8a8a8 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 100%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000);
+  mask-image: linear-gradient(to bottom, transparent, #000);
 }
 
 .tagline { flex: 1; text-align: center; letter-spacing: 0.05em; text-transform: uppercase; padding-left: 120px; }
 .pill-btn {
   display: flex; align-items: center; gap: 28px;
-  border: 1.5px solid #ffffff; border-radius: 999px;
+  border: 1.5px solid var(--ink); border-radius: 999px;
   padding: 6px 8px 6px 18px; font-size: 11px; font-weight: 600;
 }
-.pill-btn i { width: 18px; height: 18px; border-radius: 50%; background: var(--ink); display: block; }
+.pill-btn i { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); display: block; }
 
 @media (max-width: 760px) {
   .tagline { padding-left: 0; display: none; }

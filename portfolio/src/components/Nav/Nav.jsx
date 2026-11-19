@@ -14,7 +14,6 @@ function Nav() {
           <a href="#contact">Contact</a>
         </nav>
         <div className="nav-right">
-          <span className="avatar" aria-hidden="true" />
           <small>Open to work</small>
         </div>
       </header>

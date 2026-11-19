@@ -4,13 +4,14 @@
   width: 100%;
   min-height: 100vh;
   background: var(--paper);
-  padding: 28px var(--pad) 0;
+  padding: 0 var(--pad);
   display: flex; flex-direction: column;
 }
 
 /* hero-screen: nav + hero fill one viewport */
-.hero-screen { height: 100vh; height: 100svh; min-height: 560px; display: flex; flex-direction: column; }
+.hero-screen { height: 100vh; height: 100svh; min-height: 560px; padding-top: 28px; display: flex; flex-direction: column; }
 
 @media (max-width: 760px) {
-  .card { padding: 20px var(--pad) 0; }
+  .card { padding: 0 var(--pad); }
+  .hero-screen { padding-top: 20px; }
 }
