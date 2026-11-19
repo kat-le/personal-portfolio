@@ -36,11 +36,28 @@
   width: clamp(180px, 30vmin, 420px); aspect-ratio: 1;
   mix-blend-mode: multiply;
 }
-.d-hello  { left: 7%;  top: 10%;  transform: rotate(-6deg); width: clamp(100px, 24vmin, 300px);}
+.d-hello  { left: 3%;  top: 30%;  transform: rotate(-6deg); width: clamp(100px, 24vmin, 300px);}
 .d-flower { right: 14%; top: 6%;   transform: rotate(14deg); }
-.d-spiral { left: 13%; bottom: 25%; transform: rotate(-3deg); }
-.hero-pill { z-index: 2; }
+.d-spiral { left: 13%; bottom: 17%; transform: rotate(-3deg); }
+.hero-pill { z-index: 4; } /* above the photos (z 3) and doodles (z 1) */
+
+.hero-photo, .hero-collage { position: absolute; z-index: 3; display: block; user-select: none; }
+.hero-photo { left: 13%; top: 17%; --ty: -50%; --rot: -2deg; transform: translateY(var(--ty)) rotate(var(--rot)); width: clamp(220px, 24vw, 350px); height: auto; }
+.hero-collage { right: 4%; bottom: 3%; height: min(72%, 640px); width: auto; --ty: 0px; --rot: 3deg; transform: rotate(var(--rot)); animation-delay: -2s; }
+
+/* choppy, stop-motion sway: jumps between a few frames instead of easing, then returns to rest */
+@keyframes hero-sway {
+  0%, 100% { transform: translateY(var(--ty)) rotate(var(--rot)); }
+  50%      { transform: translateY(var(--ty)) rotate(calc(var(--rot) + 5deg)); }
+}
+.hero-photo, .hero-collage { animation: hero-sway 1.6s steps(1, end) infinite; transform-origin: center; }
+.hero-collage { animation-delay: -0.8s; } 
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo, .hero-collage { animation: none; }
+}
 
 @media (max-width: 760px) {
   .hero-pill { width: min(88%, 340px); }
+  .hero-photo { width: 38vw; left: 2%; top: 30%; }
+  .hero-collage { height: 38%; right: 2%; }
 }
