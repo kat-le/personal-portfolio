@@ -1,0 +1,20 @@
+/* inherits the Caveat handwriting from .section-inner, same as the about-me paragraph */
+.calendar {
+  font-size: clamp(18px, 1.8vw, 28px);
+  padding: 0.7em 0.8em 0.6em;
+  width: clamp(210px, 22vw, 340px);
+  color: #333;
+}
+.calendar-title { text-align: center; font-weight: 700; font-size: 1.25em; line-height: 1.1; margin-bottom: 0.35em; }
+.calendar-title span { font-weight: 400; color: #666; }
+.calendar table { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: center; }
+.calendar th { font-weight: 700; color: #777; padding-bottom: 0.2em; }
+.calendar td { padding: 0.08em 0; line-height: 1.5; }
+.calendar td span { display: inline-block; min-width: 1.6em; line-height: 1.5; }
+/* today: marker-highlighted in light blue */
+.calendar td .is-today {
+  font-weight: 700; color: var(--ink);
+  background: radial-gradient(ellipse at 50% 55%, #9fd0f3 0 58%, #cfe8fb 60% 100%); /* light blue marker */
+  border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+  transform: rotate(-4deg);
+}

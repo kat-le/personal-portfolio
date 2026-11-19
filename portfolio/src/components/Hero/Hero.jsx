@@ -4,6 +4,7 @@ import flower from '../../assets/doodle-2.png'
 import hello from '../../assets/doodle-3.png'
 import heroPhoto from '../../assets/hero.png'
 import collage from '../../assets/collage.png'
+import ScrollArrow from '../ScrollArrow/ScrollArrow'
 
 function Hero() {
   return (
@@ -31,6 +32,9 @@ function Hero() {
         </div>
         <div className="toggle"><i /></div>
       </div>
+
+      {/* scroll cue near the bottom of the hero: glides to About */}
+      <ScrollArrow target="about" label="Scroll to About section" />
     </section>
   )
 }

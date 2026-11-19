@@ -1,18 +1,33 @@
-/* about: full-viewport grey band, text only */
-.about {
-  --u: clamp(1px, min(0.21vmin, 0.1vw), 1.9px);
-  min-height: 100vh; min-height: 100svh;
-  display: grid; align-content: center;
-  background: var(--panel);
-  margin: 0 calc(var(--pad) * -1); padding: 40px var(--pad) 56px;
-  border-top: 1px solid #777; border-bottom: 1px solid #777;
+.about-lines p {
+  position: relative; padding-left: 1.3em;
+  font-size: clamp(18px, 1.8vw, 28px); line-height: 1.5; margin-bottom: 1em;
+}
+.about-lines p::before {
+  content: ''; position: absolute; left: 0.2em; top: 0.62em;
+  width: 0.34em; height: 0.34em; border-radius: 50%; background: var(--ink);
 }
 
-/* text scales with --u, with a readable floor on small screens */
-.about-copy { max-width: 60ch; }
-.about-copy h3 { font-size: max(24px, calc(18 * var(--u))); font-weight: 700; margin-bottom: 14px; }
-.about-copy p { font-size: max(12px, calc(8 * var(--u))); line-height: 1.7; color: #444; }
-
-@media (max-width: 760px) {
-  .about { padding: 32px var(--pad) 40px; }
+/* one section, two frameless halves side by side */
+.section-inner.two-halves {
+  width: min(calc(100vw - 96px), 1400px); /* may extend into the side padding */;
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px, 2.4vw, 38px); align-items: start;
 }
+.about-text { padding: clamp(18px, 2vw, 32px) clamp(14px, 1.5vw, 24px) clamp(10px, 1.2vw, 18px); }
+.about-text p:last-child { margin-bottom: 0.4em; }
+@media (max-width: 900px) {
+  .section-inner.two-halves { grid-template-columns: 1fr; }
+}
+
+/* photo straight under the about-me text. The PNG has ~14.2% transparent padding on its left,
+   so pull it back by that much to put the picture's edge exactly on the text box's left edge. */
+.photo-row { --w: clamp(220px, 24vw, 340px); display: flex; align-items: flex-start; gap: clamp(8px, 1.6vw, 28px); }
+/* nudge the calendar down to the top of the picture itself (the PNG has transparent padding above it) */
+.photo-row .calendar { margin-top: calc(var(--w) * 0.2); flex: none; }
+.about-photo {
+  flex: none;
+  display: block; width: var(--w); height: auto;
+  margin: clamp(-30px, -20vw, 10px) 0 calc(var(--w) * -0.27) calc(var(--w) * -0.142); /* bottom: reclaim the PNG's transparent padding */
+}
+
+/* tighter vertical padding for this section */
+.about-section { overflow-x: clip; /* the tilted flower may poke past the screen edge */ padding-top: clamp(32px, 5vh, 64px); padding-bottom: 80px; }

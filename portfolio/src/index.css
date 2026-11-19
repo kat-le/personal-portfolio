@@ -18,3 +18,7 @@ small { font-size: 10px; color: var(--muted); }
 
 .dot-icon { width: 18px; height: 18px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 10px; display: grid; place-items: center; }
 .dot-icon.ring { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
+
+/* smooth anchor / scrollIntoView jumps, unless the user prefers reduced motion */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

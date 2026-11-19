@@ -1,0 +1,11 @@
+/* space between hero and about, filled with the same grid; height is a whole number of cells */
+.grid-gap {
+  height: round(down, clamp(80px, 12vh, 160px), 40px);
+  margin: 0 calc(var(--pad) * -1);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(#a8a8a8 1px, transparent 1px),
+    linear-gradient(90deg, #a8a8a8 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 var(--grid-shift, 0px);
+}

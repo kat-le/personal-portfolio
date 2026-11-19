@@ -8,7 +8,7 @@
 }
 
 .hero-pill {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  position: absolute; left: 50%; top: calc(50% - 67px); transform: translate(-50%, -50%);
   width: clamp(280px, 34vw, 560px); min-height: clamp(110px, 16vh, 200px); padding: 34px 28px 20px;
   background: rgba(255, 255, 255, 0.92);
   border: 3px solid #888; outline: 8px solid var(--paper);
