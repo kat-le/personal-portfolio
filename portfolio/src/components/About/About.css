@@ -13,6 +13,7 @@
 .photo.a { width: calc(165 * var(--u)); height: calc(222 * var(--u)); left: 0; top: 0; }
 .photo.b { width: calc(175 * var(--u)); height: calc(235 * var(--u)); left: calc(120 * var(--u)); top: calc(44 * var(--u)); transform: rotate(-3deg); overflow: visible; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 .photo.b img { border-radius: 8px; }
+.photo img.bw { filter: grayscale(1); }
 .plus {
   position: absolute; top: calc(-26 * var(--u)); left: calc(-22 * var(--u)); width: calc(36 * var(--u)); height: calc(36 * var(--u)); border-radius: 50%;
   background: #fff; border: 2px solid #666; display: grid; place-items: center; font-size: calc(22 * var(--u));
