@@ -1,0 +1,35 @@
+/* about: full-bleed grey band with the overlapping photo pair */
+.about {
+  min-height: 100vh; min-height: 100svh;
+  display: grid; grid-template-columns: calc(330 * var(--u)) 1fr; gap: 24px; align-items: center; align-content: center;
+  background: var(--panel);
+  margin: 0 calc(var(--pad) * -1); padding: 40px var(--pad) 56px;
+  border-top: 1px solid #777; border-bottom: 1px solid #777;
+}
+.about { --u: clamp(1px, 0.21vmin, 1.9px); }
+.photo-pair { position: relative; height: calc(280 * var(--u)); }
+.photo { position: absolute; border: 2px solid #777; border-radius: 10px; overflow: hidden; background: #fff; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo.a { width: calc(165 * var(--u)); height: calc(222 * var(--u)); left: 0; top: 0; }
+.photo.b { width: calc(175 * var(--u)); height: calc(235 * var(--u)); left: calc(120 * var(--u)); top: calc(44 * var(--u)); transform: rotate(-3deg); overflow: visible; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.photo.b img { border-radius: 8px; }
+.plus {
+  position: absolute; top: calc(-26 * var(--u)); left: calc(-22 * var(--u)); width: calc(36 * var(--u)); height: calc(36 * var(--u)); border-radius: 50%;
+  background: #fff; border: 2px solid #666; display: grid; place-items: center; font-size: calc(22 * var(--u));
+}
+.bubble {
+  position: absolute; left: calc(118 * var(--u)); top: calc(162 * var(--u)); z-index: 2;
+  background: #fff; border: 2px solid #777; border-radius: 50%;
+  width: calc(36 * var(--u)); height: calc(32 * var(--u)); display: flex; align-items: center; justify-content: center; gap: calc(3 * var(--u));
+}
+.bubble i { width: calc(5 * var(--u)); height: calc(5 * var(--u)); border-radius: 50%; background: #333; }
+
+/* text scales with the photos via --u, with a readable floor on small screens */
+.about-copy { padding-top: calc(24 * var(--u)); }
+.about-copy h3 { font-size: max(24px, calc(18 * var(--u))); font-weight: 700; margin-bottom: 14px; }
+.about-copy h5 { font-size: max(12px, calc(8 * var(--u))); margin-bottom: 8px; }
+.about-copy p { font-size: max(12px, calc(8 * var(--u))); line-height: 1.7; color: #444; }
+
+@media (max-width: 760px) {
+  .about { grid-template-columns: 1fr; padding: 32px var(--pad) 40px; }
+}

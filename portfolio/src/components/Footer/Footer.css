@@ -1,0 +1,14 @@
+/* player footer */
+.player { margin: 0 calc(var(--pad) * -1); border-top: 0; background: var(--panel); padding-bottom: 22px; }
+.progress { height: 3px; background: #ccc; position: relative; }
+.progress i { position: absolute; left: 0; top: 0; height: 100%; width: 42%; background: #222; }
+.progress i::after { content: ''; position: absolute; right: -4px; top: -2px; width: 7px; height: 7px; border-radius: 50%; background: #222; }
+.player-row { display: grid; grid-template-columns: 60px 1fr 60px; align-items: center; padding: 18px 30px 0; }
+.chev { font-size: 20px; color: #555; }
+.now { text-align: center; }
+.now strong { display: block; font-size: 12px; margin-bottom: 4px; }
+.now small { font-size: 10px; }
+.player-dot { justify-self: end; width: 28px; height: 28px; border-radius: 50%; background: #333; }
+
+.bottom-bar { display: flex; justify-content: space-between; padding: 22px 0 24px; font-size: 10px; font-weight: 700; }
+.bottom-bar { margin-top: auto; }

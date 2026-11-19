@@ -1,0 +1,46 @@
+/* shared project layout */
+.project {
+  position: relative; display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start;
+  padding: 40px 0;
+}
+.project h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 6px; }
+.lede { font-size: 10px; color: #444; line-height: 1.5; margin-bottom: 18px; }
+.project-copy p { font-size: 10px; line-height: 1.7; color: #444; }
+
+.placeholder {
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(45deg, #dcdcdc, #dcdcdc 10px, #e4e4e4 10px, #e4e4e4 20px);
+  display: grid; place-items: center;
+  color: #8a8a8a; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+.photo-card { width: 280px; border: 2px solid #777; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+.photo-card .placeholder { height: 230px; }
+.photo-card-foot { padding: 8px 12px 10px; font-size: 10px; }
+.cap { font-weight: 700; }
+.photo-actions { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+.btn-outline, .btn-red { font-size: 10px; padding: 6px 12px; border-radius: 3px; }
+.btn-outline { border: 2px solid #333; }
+.btn-red { background: var(--accent); color: #fff; }
+.count { font-size: 12px; margin-left: 6px; }
+.shuffle { font-size: 12px; }
+.play { margin-left: auto; width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-size: 12px; }
+.meta-row { display: flex; gap: 22px; color: var(--muted); font-size: 10px; }
+
+.project-copy { padding-top: 6px; }
+.info-card {
+  margin-top: 8px; margin-right: 56px;
+  background: var(--panel); border-radius: 14px; padding: 18px 20px;
+  box-shadow: inset 0 0 0 1px #e4e4e4;
+}
+.info-head { display: flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 600; margin-bottom: 20px; }
+.info-card h4 { font-size: 9px; margin-bottom: 6px; }
+.icon-row { display: flex; justify-content: space-between; margin-top: 22px; color: #555; }
+.side-dot { position: absolute; right: -4px; top: 50%; width: 28px; height: 28px; border-radius: 50%; background: #444; }
+
+@media (max-width: 760px) {
+  .project { grid-template-columns: 1fr; }
+  .photo-card { width: 100%; }
+  .info-card { margin-right: 0; }
+  .side-dot { display: none; }
+}
